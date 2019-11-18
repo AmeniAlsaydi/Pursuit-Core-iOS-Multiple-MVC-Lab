@@ -10,6 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var animalTableView: UITableView!
+    
+    var  animals = [ZooAnimal]() {
+        didSet { // using didSet{...} property observer to reload the tablr view
+            animalTableView.reloadData()
+            
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
