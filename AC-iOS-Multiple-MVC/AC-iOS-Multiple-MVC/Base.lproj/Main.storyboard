@@ -85,10 +85,10 @@
             </objects>
             <point key="canvasLocation" x="1214.4927536231885" y="134.59821428571428"/>
         </scene>
-        <!--View Controller-->
+        <!--Animal Description Controller-->
         <scene sceneID="GhS-9Z-ML7">
             <objects>
-                <viewController id="Bl5-NR-StK" sceneMemberID="viewController">
+                <viewController id="Bl5-NR-StK" customClass="AnimalDescriptionController" customModule="AC_iOS_Multiple_MVC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eTS-0G-5zI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -96,26 +96,43 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lw6-SA-7FV">
                                 <rect key="frame" x="0.0" y="88" width="414" height="358.5"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vxG-8C-uGG">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vxG-8C-uGG">
                                 <rect key="frame" x="8" y="454.5" width="398" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0GT-KY-hIh">
+                                <rect key="frame" x="8" y="483" width="398" height="371"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="vxG-8C-uGG" firstAttribute="top" secondItem="Lw6-SA-7FV" secondAttribute="bottom" constant="8" id="2Dd-yf-PF2"/>
+                            <constraint firstItem="0GT-KY-hIh" firstAttribute="leading" secondItem="Pkk-Yb-De1" secondAttribute="leading" constant="8" id="5aG-Ib-ldO"/>
+                            <constraint firstItem="Pkk-Yb-De1" firstAttribute="trailing" secondItem="0GT-KY-hIh" secondAttribute="trailing" constant="8" id="6qQ-ES-sLB"/>
                             <constraint firstItem="Pkk-Yb-De1" firstAttribute="trailing" secondItem="vxG-8C-uGG" secondAttribute="trailing" constant="8" id="AIM-4f-KhH"/>
                             <constraint firstItem="Lw6-SA-7FV" firstAttribute="height" secondItem="eTS-0G-5zI" secondAttribute="height" multiplier="0.4" id="BrA-w0-NYd"/>
                             <constraint firstItem="vxG-8C-uGG" firstAttribute="leading" secondItem="Pkk-Yb-De1" secondAttribute="leading" constant="8" id="DY8-YF-V5v"/>
+                            <constraint firstItem="0GT-KY-hIh" firstAttribute="top" secondItem="vxG-8C-uGG" secondAttribute="bottom" constant="8" id="SDM-gG-17o"/>
                             <constraint firstItem="Lw6-SA-7FV" firstAttribute="trailing" secondItem="Pkk-Yb-De1" secondAttribute="trailing" id="WqK-3l-CvN"/>
+                            <constraint firstItem="Pkk-Yb-De1" firstAttribute="bottom" secondItem="0GT-KY-hIh" secondAttribute="bottom" constant="8" id="jfY-ou-SFI"/>
                             <constraint firstItem="Lw6-SA-7FV" firstAttribute="top" secondItem="Pkk-Yb-De1" secondAttribute="top" id="uCM-6k-yTw"/>
                             <constraint firstItem="Lw6-SA-7FV" firstAttribute="leading" secondItem="Pkk-Yb-De1" secondAttribute="leading" id="zLF-C9-ghX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Pkk-Yb-De1"/>
                     </view>
                     <navigationItem key="navigationItem" id="lTE-Ty-qhz"/>
+                    <connections>
+                        <outlet property="animalImage" destination="Lw6-SA-7FV" id="vLh-kN-xHO"/>
+                        <outlet property="animalName" destination="vxG-8C-uGG" id="ahm-AM-GP3"/>
+                        <outlet property="descriptionLabel" destination="0GT-KY-hIh" id="qdG-1N-OzV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e5v-2k-Sag" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

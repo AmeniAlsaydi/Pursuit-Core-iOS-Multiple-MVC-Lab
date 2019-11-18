@@ -33,6 +33,12 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let detailVC = segue.destination as? AnimalDescriptionController, let indexPath = animalTableView.indexPathForSelectedRow else {fatalError("segue issue") }
+        
+        detailVC.animal = animals[indexPath.row]
+    }
 
 
 }
